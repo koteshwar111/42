@@ -26,13 +26,23 @@ pipeline {
             }
         }
 
+        pipeline {
+    agent any
+    stages {
         stage('Job 3: Execute Python Program') {
             steps {
-               script {
-                   writeFile file: 'hello.py', text: 'print("Hello from Python!")'
-                   bat 'python hello.py'
-                      }
-                   }
+                script {
+                    // Write the Python file
+                    writeFile file: 'hello.py', text: 'print("Hello from Python!")'
+
+                    // Explicitly call Python using its full path
+                    bat '"C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" hello.py'
+                }
+            }
+        }
+    }
+}
+
         }
     }
 
