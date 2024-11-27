@@ -26,9 +26,6 @@ pipeline {
             }
         }
 
-        pipeline {
-    agent any
-    stages {
         stage('Job 3: Execute Python Program') {
             steps {
                 script {
@@ -39,10 +36,6 @@ pipeline {
                     bat '"C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" hello.py'
                 }
             }
-        }
-    }
-}
-
         }
     }
 
