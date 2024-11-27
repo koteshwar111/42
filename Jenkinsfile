@@ -32,8 +32,8 @@ pipeline {
                     // Write the Python file
                     writeFile file: 'hello.py', text: 'print("Hello from Python!")'
 
-                    // Explicitly call Python using its full path
-                    bat '"C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" hello.py'
+                    // Explicitly call Python using the correct full path
+                    bat '"C:\\Program Files\\Python313\\python.exe" hello.py'
                 }
             }
         }
